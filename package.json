@@ -1,0 +1,14 @@
+{
+  "name": "suisendtokens",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sendSui.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ZonaV",
+  "license": "ISC",
+  "dependencies": {
+    "@mysten/sui.js": "^0.17.0"
+  }
+}
