@@ -2,11 +2,10 @@ import {Ed25519Keypair, JsonRpcProvider, Network, RawSigner} from "@mysten/sui.j
 import {readFileSync} from "fs";
 import * as fs from "fs";
 
+const content = readFileSync("mnemonics.txt", 'utf-8');
+const mnemonicArr = content.split(/\r?\n/);
 
-for (let i=0; i<1000; i++) {
-
-    const content = readFileSync("mnemonics.txt", 'utf-8');
-    const mnemonicArr = content.split(/\r?\n/);
+for (let i=0; i<mnemonicArr.length; i++) {
     const provider = new JsonRpcProvider(Network.DEVNET);
     const keypair = Ed25519Keypair.deriveKeypair(mnemonicArr[i]);
     const address = keypair.getPublicKey().toSuiAddress();
